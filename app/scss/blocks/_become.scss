@@ -1,0 +1,379 @@
+.become {
+    padding: 56px 0 0px;
+    background-color: #0b0b33;
+    overflow: hidden;
+
+    @include mq(sm) {
+        padding-top: 42px;
+        padding-bottom: 0;
+    }
+
+    @include mq(lg) {
+        padding-top: 58px;
+        padding-bottom: 46px;
+    }
+
+    @include mq(dt) {
+        padding-top: 111px;
+    }
+
+    @include mq(fhd) {
+        padding-top: 109px;
+        padding-bottom: 60px;
+    }
+
+    // &.become--page {
+    //     background: linear-gradient(270deg, #003cbe -50%, #00123b 150%);
+    //     overflow: hidden;
+
+    //     @include mq(sm) {
+    //         display: flex;
+    //         height: 100%;
+    //         align-items: center;
+    //     }
+
+    //     .become {
+    //         &__title {
+    //             h1 {
+    //                 text-align: left;
+    //             }
+    //         }
+    //     }
+
+    //     .absolute-bg {
+    //         @include mq(sm) {
+    //             top: 50%;
+    //             transform: translateY(-50%);
+    //         }
+
+    //         @include mq(lg) {
+    //             transform: translateY(-45%);
+    //         }
+    //     }
+    // }
+
+    &__title {
+        @include adaptiv-font(40, 24);
+        font-family: 'Montserrat';
+        font-weight: 800;
+        color: #0b0b33;
+
+        @include mq(sm) {
+            grid-row: 1;
+            // grid-column: 7/13;
+            grid-column: 1/6;
+            padding-top: 39px;
+            font-size: 24px;
+        }
+
+        @include mq(lg) {
+            // grid-column: 1/7;
+            font-size: 36px;
+            text-align: left;
+            margin-bottom: 28px;
+        }
+
+        @include mq(dt) {
+            font-size: 40px;
+            padding-top: 70px;
+            margin-bottom: 78px;
+        }
+
+        @include mq(fhd) {
+            padding-top: 106px;
+            margin-bottom: 70px;
+            // margin-bottom: 25px;
+            grid-column: 8/12;
+
+        }
+    }
+
+    &__inner {
+        background-color: #ffbb04;
+        border-radius: 20px;
+        padding-inline: 30px;
+        padding-top: 36px;
+        text-align: center;
+        width: 100%;
+        max-width: 290px;
+        margin: 0 auto;
+        position: relative;
+
+        @include mq(sm) {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+
+            padding-top: 0;
+            border-radius: 20px;
+
+            // position: relative;
+        }
+
+        @include mq(lg) {
+            grid-column-gap: 35px;
+        }
+
+        @include mq(fhd) {
+            grid-column-gap: 10px;
+        }
+    }
+
+
+
+    .form {
+        padding-bottom: 0;
+        margin-bottom: 10px;
+
+        p { // Targeting labels
+            font-family: 'Montserrat';
+            font-weight: 400;
+            font-size: 14px;
+            color: #0b0b33;
+            margin-bottom: 20px; // Spacing between label and line
+        }
+
+        &__button { // Assuming a button class or similar can be used
+            background-color: #ffbb04;
+            border-radius: 6px;
+            padding: 17px 36px;
+            width: 100%;
+            max-width: 290px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            
+            p {
+                font-family: 'Montserrat';
+                font-weight: 700;
+                font-size: 16px;
+                color: black;
+                margin-bottom: 0; // Reset margin for button text
+            }
+        }
+
+
+        @include mq(sm) {
+            position: relative;
+            grid-row: 2/3;
+            // grid-column: 7 / 13;
+            grid-column: 1/6;
+
+            margin-bottom: 0px;
+            padding-top: 20px;
+        }
+
+        @include mq(lg) {
+            // margin-bottom: 50px;
+
+        }
+
+        @include mq(dt) {
+            padding-top: 0;
+            margin-bottom: 11%;
+        }
+
+        @include mq(fhd) {
+                        grid-column: 8 / 12;
+            padding-right: 76px;
+            // margin-bottom: 21%;
+        }
+    }
+
+    &__image {
+        margin: 0 auto;
+        height: clamp(225px, 70vw, 385px);
+        width: 100%;
+        overflow: hidden;
+
+        @include mq(sm) {
+            // width: clamp(300px, 36vw, 360px);
+            margin-left: 65px;
+            margin-right: 0;
+            margin-left: 0;
+            margin-bottom: 0;
+            position: absolute;
+            left: -42px;
+            // bottom: 0;
+            overflow: visible;
+
+            min-height: 100%;
+            width: clamp(368px, 50vw, 500px);
+            bottom: 3vw;
+        }
+
+        @include mq(lg) {
+            width: auto;
+            left: 15px;
+            bottom: 0px;
+            /* overflow: hidden; */
+            /* top: -85px; */
+            min-height: clamp(108%, 40vw, 700px);
+        }
+
+        @include mq(dt) {
+            width: 448px;
+            margin-bottom: 0;
+            margin-left: 0;
+            left: -2%;
+        }
+
+        @include mq(fhd) {
+            width: 496px;
+            margin-bottom: 0;
+            margin-left: 0;
+            left: 15.6%;
+        }
+
+        img {
+            display: block;
+            height: auto;
+            width: 100%;
+            object-fit: cover;
+            object-position: top;
+
+            @include mq(lg) {
+                width: auto;
+                height: 100%;
+            }
+        }
+    }
+
+    &__circle-layout {
+        display: none;
+        position: absolute;
+        z-index: -1;
+        background-color: #FFD504;
+        width: 90%;
+        height: 60%;
+        border-radius: 100%;
+        top: 20%;
+        left: 5%;
+        filter: blur(70px);
+    }
+
+    &__image-decor {
+        position: absolute;
+        width: var(--width);
+        height: var(--height);
+        z-index: -1;
+
+        &--blue {
+            --width: 76px;
+            top: 20%;
+            left: 8%;
+            z-index: -1;
+
+            @include mq(sm) {
+                left: -12%;
+                top: 6%;
+                --width: 126px;
+            }
+
+            @include mq(lg) {
+                --width: 190px;
+                left: -12%;
+                top: 15%;
+            }
+
+            @include mq(dt) {
+                --width: 226px;
+                left: -19%;
+                top: 15%;
+            }
+
+            @include mq(fhd) {
+                --width: 226px;
+                left: 8.3%;
+                top: 12.7%;
+            }
+        }
+
+        &--yellow {
+            --width: 54px;
+            top: 28%;
+            left: 67%;
+
+            @include mq(sm) {
+                --width: 94px;
+                top: 76%;
+                left: 68%;
+            }
+
+            @include mq(lg) {
+                --width: 135px;
+                top: 75%;
+                left: 85%;
+            }
+
+            @include mq(dt) {
+                --width: 156px;
+                top: 74.7%;
+                left: 84.4%;
+            }
+
+            @include mq(fhd) {
+                --width: 156px;
+                top: 69.7%;
+                left: 82.4%;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__layout {
+        position: relative;
+        z-index: 0;
+        display: none;
+
+        // background-color: #080e1e;
+        @include mq(sm) {
+            display: block;
+            position: relative;
+            padding-bottom: 0;
+            grid-row: 1/3;
+            // grid-column: 1/6;
+            grid-column: 7 / 13;
+            display: grid;
+            place-items: center;
+            background-color: transparent;
+        }
+
+
+
+        @include mq(lg) {
+            // grid-column: 7/13;
+        }
+
+        @include mq(fhd) {
+            // grid-column: 7/13;
+        }
+
+        // &::before,
+        // &::after {
+        //   content: "";
+        //   position: absolute;
+        //   top: 0;
+        //   width: calc((100vw - 100%) / 2);
+        //   height: 100%;
+        //   background-color: #080e1e;
+        //   @include mq(sm) {
+        //     display: none;
+        //   }
+        // }
+
+        // &::before {
+        //   right: 100%;
+        // }
+        // &::after {
+        //   left: 100%;
+        // }
+    }
+}

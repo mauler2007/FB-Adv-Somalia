@@ -1,0 +1,47 @@
+-
+  var popupName = 'Período da campanha'
+  var period = '1 de Outubro de 2021 a 1 de Outubro de 2022'
+  var popupTexts = [
+    {pupupText: 'Para participar é necessário preencher um formulário de candidatura, confirmar o seu número de telefone, bem como o seu e-mail.'}
+  ]
+   
+#popup-modal.popup.modal
+
+  .popup__wrapper
+    a.popup__close(href='#') close
+      span.popup__close-btn
+    
+    .popup__content 
+
+      .popup__image 
+        img.popup__img(src="images/pupup__gif.jpg", alt="")
+      ul.popup__list
+        li.popup__number
+          p.popup__text.
+            <span>Вручную</span> введите <span>код</span> вашей страны
+
+        li.popup__number
+          p.popup__text.
+            Перейдя в следующее поле, введите <span>номер</span> телефона
+
+        li.popup__number
+          p.popup__text.
+            Ваша страна <span>автоматически</span> будет привязана к аккаунту после регистрации.
+        li.popup__number
+          p.popup__text.
+            Ваша страна <span>автоматически</span> будет привязана к аккаунту после регистрации.
+      .popup__button
+        a.popup__btn(href='https://betandyou.com/registration/').
+          регистрируйся
+
+
+      
+      //- h2.popup__name= popupName
+      //- p.popup__date 
+      //-   time.pupup__time(datetime="2021-10-01T00:01")= period
+      //- .popup__frame 
+      //-   ul.popup__rules
+      //-     for i in popupTexts  
+      //-       li.popup__rule 
+      //-         p= i.pupupText
+          

@@ -1,0 +1,29 @@
+.container {
+    --kpadding: 15px;
+    min-width: 320px;
+    margin: 0 auto;
+    padding: 0 var(--kpadding);
+
+    @include mq(sm) {
+        --kpadding: 30px;
+    }
+
+    @include mq(lg) {
+        max-width: 1160px;
+    }
+
+    @include mq(dt) {
+        width: 100%;
+        max-width: 1300px;
+    }
+
+    @include mq(fhd) {
+        max-width: 1780px;
+    }
+
+    &--fluid {
+        @include mq(lg) {
+            max-width: 1080px;
+        }
+    }
+}

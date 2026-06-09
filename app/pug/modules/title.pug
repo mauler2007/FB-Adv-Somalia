@@ -1,0 +1,34 @@
+- 
+  var title =  `<span>Get Freebet up to 30 Euro</span>` 
+  var subtitle = `<span data-bonus-value="euro" class="currency-amount" >110&nbsp;e</span> + <span class="currency-amount-2">30%</span> <span>Extra!</span>  `
+.title#title.animated-page-title
+    h1.title__text
+        span.title__num $1,600
+        span.title__string for the Top Agents
+    h2  Join the Prize Hunters Tournament and win cash rewards! 10 Nov – 23 Nov  
+//- .title
+//-   h1.title__text
+//-     span.title__num Get Freebet up to 30 Euro
+//-     span for your first deposit
+//-   p.title__promo
+//-     span.title__short PromoCode 
+//-     span.title__extra Improve your game with Promo Code  
+//-     span.separator |
+//-     span(data-code=`${promocode}`) promoCode
+//- - 
+//-   var title = 'Aproveita o Bónus'
+//-   var subtitle = `de Primeiro`
+//-   var subtitleColor = `de até <span class="currency-amount">&nbsp;€110</span>`
+
+//- .title
+//-   h1
+//-     span.title__text-animate.title__text.title__text--thin!=`${title}`
+//-     span.title__text-animate.title__text.title__text--weight!=subtitle
+//-     span.title__text-animate.title__text.title__text--color.title__text--color-es
+//-       span.title__text.title__text--weight Depósito&nbsp;
+//-       span de hasta &nbsp;
+//-         <span class="currency-amount">€110</span>
+    .from('.promo .bonusValue',1 {
+        ease: Elastic.easeOut.config(1, 1.2),
+        x:-100,
+    },0)

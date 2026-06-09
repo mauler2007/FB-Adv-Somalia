@@ -1,0 +1,419 @@
+.form {
+    padding: 1em 0 1.5em;
+    @include adaptiv-font(24, 20);
+
+    .validate-block {
+        display: none;
+        opacity: 0;
+        font-size: 12px;
+        @extend %montserrat-400;
+    }
+
+    &__title {
+        font-size: 1em;
+        margin-bottom: 0.4em;
+
+        &+p {
+            font-size: 0.6em;
+            margin-bottom: 1em;
+        }
+    }
+
+    &form {
+        // контейнер для лейблів 
+        @include mq(sm) {
+            display: flex;
+            flex-direction: column;padding-bottom: 0;
+        }
+        // @include mq(sm) {
+        //     display: grid;
+        //     // grid-template-columns: 60% 40%;
+        //     grid-template-columns: 2fr 1fr;
+        //     // grid-template-rows: 50px 50px 50px;
+        // }
+    }
+
+    label {
+        margin-bottom: 25px;
+        display: flex;
+        flex-wrap: wrap;
+
+        @include mq(lg) {
+            margin-bottom: 33px;
+        }
+
+        @include mq(dt) {
+            margin-bottom: 35px;
+        }
+
+        @include mq(fhd) {
+            margin-bottom: 31px;
+        }
+
+        &:first-child {
+            @include mq(sm) {
+                // margin-bottom: 0;
+                grid-row: 1 / span 3;
+                // padding-right: 20px;
+                // grid-column: 1 / span 3;
+            }
+        }
+
+        select,
+        input {
+            border-bottom: 1px solid #dddddd;
+            font-family: 'Montserrat', sans-serif;
+            @extend %montserrat-400;
+            // padding: 0 2%;
+            padding: 0 2% 0 8px;
+            background: transparent;
+            font-size: 14px;
+            height: 30px;
+            line-height: 1.6;
+            color: #dddddd;
+            border-radius:0;
+
+            @include mq(sm) {
+                padding-left: 0;
+            }
+
+            @include mq(dt) {
+                padding-left: 0;
+                font-size: 16px;
+            }
+
+            @include mq(fhd) {
+                padding-bottom: 9px;
+                // padding-top: 9px;
+            }
+
+        }
+
+        .wpcf7-form-control-wrap {
+            width: 100%;
+        }
+
+        select {
+            // padding: 0 2%;
+            padding: 0 2% 0 5px;
+            height: 30px;
+            line-height: 1.6;
+            border: none;
+            color: #dddddd;
+            border-bottom: 1px solid #dddddd;
+            cursor: pointer;
+            width: 100%;
+            transition: color 0.3s linear;
+
+            @include mq(sm) {
+                padding: 0 2% 0 0;
+
+            }
+
+
+            &:hover {
+                color: darken($white, 65%);
+                // border-bottom-color : rgba(255, 187, 4, 0.7);
+                // box-shadow: 0px 0px 10px rgba(255, 187, 4, 0.7);
+            }
+
+            option {
+                @extend %montserrat-400;
+                background-color: transparent;
+                color: black;
+                padding: 0;
+                margin: 0;
+            }
+        }
+
+
+
+        .iti {
+            display: flex;
+            width: 100%;
+
+            &__selected-dial-code {
+                font-size: 14px;
+                color: #dddddd;
+                @extend %montserrat-400;
+
+                @include mq(dt) {
+                    font-size: 17px;
+                }
+            }
+
+            &__selected-flag {
+                @include mq(sm) {
+                    padding-left: 0;
+                }
+            }
+
+            .form__input {
+                color: #dddddd;
+                padding-bottom: 0px;
+                @extend %montserrat-400;
+                cursor: pointer;
+
+
+                &:placeholder {
+                    @extend %montserrat-400;
+                }
+            }
+
+            &__country-name {
+                color: $black;
+            }
+
+            &__arrow {
+                margin-left: 6px;
+                width: 0;
+                height: 0;
+                border: none;
+                width: 13px;
+                height: 6px;
+                background-image: url("../images/country-arrow-down-iconn.svg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+
+            // &>.validate-block {
+            //   width: 100%;
+            //   opacity: 0;
+            //   font-size: 12px;
+            //   @extend %montserrat-400;
+            // }
+        }
+
+        // .jq-selectbox {
+        //   width: 100%;
+
+        //   &__select {
+        //     box-shadow: unset;
+        //     text-shadow: unset;
+        //     text-shadow: unset;
+        //     border-bottom-color: #fff;
+        //     border: none;
+        //     background: transparent;
+        //     /* text-shadow: 1px 1px #FFF; */
+        //     border-radius: 0px;
+        //     color: #fff;
+        //     border-bottom: 1px solid #fff;
+
+        //     @include mq(sm) {
+        //     padding-left: 0;
+        //     }
+        //   }
+        //   &.focused {
+        //     .jq-selectbox__select {
+        //       border: none;
+        //       border-bottom: 1px solid rgba(255, 187, 4, 0.7);
+        //     }
+        //   }
+        //   &__trigger {
+        //     border-left: none;
+        //   }
+
+        //   &__trigger-arrow {
+        //     top: 50%;
+        //     right: 0;
+        //     transform: translate(0, -50%);
+        //     border: none;
+        //     width: 13px;
+        //     height: 6px;
+        //     background-image: url("../images/country-arrow-down-icon.svg");
+        //     background-repeat: no-repeat;
+        //     background-size: cover;
+        //     background-position: center;
+        //   }
+
+        //   &.focused {
+        //     border: none;
+        //     border-bottom: 1px solid rgba(255, 187, 4, 0.7);
+        //   }
+        //   // &__select {
+        //   //   border: none;
+        //   //   border-bottom: 1px solid rgba(255, 187, 4, 0.7);
+        //   // }
+        // }
+
+        .validate-block {
+            width: 100%;
+            opacity: 0;
+            font-size: 12px;
+            @extend %montserrat-400;
+        }
+    }
+
+    textarea,
+    input {
+        width: 100%;
+        border-radius: 0;
+        border: none;
+        // @include adaptiv-font(16, 12);
+        // transition: box-shadow 0.3s linear;
+        // transition: border-bottom-color 0.3s linear;
+        cursor: pointer;
+        background: transparent;
+
+        &::placeholder {
+            color: #dddddd;
+            font-size: 14px;
+            transition: color 0.3s linear;
+
+            @include mq(dt) {
+                font-size: 16px;
+            }
+        }
+
+        &:hover {
+            &::placeholder {
+                color: darken($white, 65%);
+            }
+
+            // border-bottom-color : rgba(255, 187, 4, 0.7);
+            // box-shadow: 0px 0px 10px rgba(255, 187, 4, 0.7);
+        }
+
+        &:active {
+            border-bottom-color: rgba(#dddddd, 0.7);
+        }
+
+        &:focus {
+            outline: none;
+            border-bottom-color: rgba(#dddddd, 0.7);
+        }
+
+        &.button {
+            background-color: #dddddd;
+            color: white;
+            border-radius: 6px;
+
+            &--yellow {
+                transition: background-color 0.3s linear, color 0.3s linear;
+
+                // @include mq(sm) {
+                //     line-height: 68px;
+                // }
+
+                &:hover {
+                    background-color: $blue;
+                    color: $white;
+                }
+
+                &:active {
+                    background-color: darken($accent, 10);
+                    color: $white;
+                }
+
+            }
+        }
+
+        &.form__input--invalid {
+            border-bottom-color: red;
+
+            &+.validate-block {
+                opacity: 1;
+                display: block;
+                color: red;
+            }
+        }
+
+        // & + .validate-block {
+        //   width: 100%;
+        //   opacity: 0;
+        //   font-size: 12px;
+        //   @extend %montserrat-400;
+        // }
+    }
+
+    textarea {
+        display: block;
+        height: 80px;
+        resize: none;
+
+        @include mq(sm) {
+            height: auto;
+        }
+    }
+
+    &__actions {
+        @include mq(lg) {
+            padding-top: 18px;
+        }
+
+        @include mq(dt) {
+            padding-top: 10px;
+        }
+
+        @include mq(fhd) {
+            padding-top: 10px;
+        }
+    }
+
+    .wpcf7-select {
+        &:focus {
+            outline: none;
+            border-bottom-color: #dddddd;
+        }
+    }
+
+    /* custumize wpcf7 response msg start */
+    .wpcf7-response-output {
+        display: none;
+        margin: 1em auto 0em;
+        padding: 0.2em 1em;
+        border: 2px solid green;
+        opacity: 0;
+        transform: translateY(100%);
+        font-size: 14px;
+        @extend %montserrat-400;
+        animation: scaleOpacity;
+        animation-delay: 0.3s;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+
+        @keyframes scaleOpacity {
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @include mq(sm) {
+            position: absolute;
+            bottom: unset;
+            top: 98%;
+        }
+
+        @include mq(dt) {
+            margin-top: 1.5em;
+            font-size: 16px;
+            top: 100%;
+        }
+
+        &.msgHide {
+            opacity: 1;
+            transform: translateX(0);
+
+            animation: msgHide;
+            animation-delay: 1s;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+
+            @keyframes msgHide {
+                100% {
+                    transform: translateX(-100%);
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    /* custumize wpcf7 response msg end */
+
+    .wpcf7-not-valid-tip {
+        position: absolute;
+        font-size: 0.6em;
+    }
+}

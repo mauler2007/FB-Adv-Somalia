@@ -1,0 +1,329 @@
+.prize {
+    padding-top: 20px;
+    overflow: hidden;
+    font-size: 14px;
+    text-align: center;
+    padding-bottom: 22px;
+
+    @include mq(sm) {
+        // padding-top: 42px;
+        // overflow: visible;
+        padding-bottom: 18px;
+        padding-top: 32px;
+        border-radius: 36px;
+    }
+
+    @include mq(lg) {
+        padding-bottom: 53px;
+        padding-top: 40px;
+    }
+
+    @include mq(dt) {
+        padding-bottom: 75px;
+        padding-top: 60px;
+    }
+
+    @include mq(fhd) {
+        padding-top: 50px;
+        padding-bottom: 82px;
+    }
+
+    &__inner {
+        // padding-left: 5px;
+        // padding-right: 5px;
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+        margin-inline: auto;
+
+        @include mq(sm) {
+            max-width: 100%;
+            display: flex;
+            padding-inline: 0;
+        }
+
+        @include mq(lg) {
+            padding-inline: 0;
+        }
+
+        // .prize__title,
+        // p,
+        // .prize__subtitle,
+        // .prize__item {
+        //     will-change: transform, opacity, clip-path;
+        // }
+
+        &>p>.button {
+            // кнопка в блоці Вордпрес
+            margin-bottom: 6px;
+            text-align: center;
+
+            @include mq(dt) {
+                line-height: 80px;
+                font-size: 24px;
+            }
+        }
+    }
+
+    ul {
+        padding: 20px 13px 5px;
+        margin-top: 30px;
+        border-radius: 10px;
+        background-color: #2D2D68;
+        position: relative;
+        z-index: 1;
+
+        @include mq(sm) {
+            display: flex;
+            padding-inline: 0;
+            padding-bottom: 20px;
+        }
+
+        @include mq(lg) {
+            margin-top: 44px;
+        }
+
+        @include mq(dt) {
+            margin-top: 72px;
+        }
+
+        @include mq(fhd) {
+            margin-top: 40px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+    }
+
+
+
+    li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 0px 10px 0px;
+        min-height: 85px;
+        transition: opacity 0.3s linear;
+
+        &:not(:last-child) {
+            border-bottom: 2px solid $black;
+            margin-bottom: 17px;
+
+            @include mq(sm) {
+                border-right: 2px solid $black;
+                border-bottom: none;
+                margin-bottom: 0;
+
+            }
+
+            @include mq(lg) {
+                margin-bottom: 0px;
+            }
+        }
+
+        @include mq(sm) {
+            height: 100%;
+            padding: 10px 15px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-bottom: 0;
+            // border-radius: 20px;
+            // max-width: 80%;
+            overflow: hidden;
+        }
+
+        @include mq(lg) {
+            padding: 10px 15px 10px;
+        }
+
+        @include mq(dt) {
+            padding: 28px 15px 0px 22px;
+        }
+
+        @include mq(fhd) {
+            max-width: 33.9%;
+            width: 100%;
+            padding: 10px 22px 10px 22px;
+        }
+
+
+        svg {
+            stroke: $black;
+        }
+
+
+        // &:nth-child(3n) {
+        //     margin-bottom: 21px;
+        // }
+
+        h3 {
+            font-size: 16px;
+            @extend %montserrat-700it;
+            line-height: 1.2;
+            margin-bottom: 5px;
+
+            @include mq(sm) {
+                margin-bottom: 10px;
+                font-size: 20px;
+
+            }
+
+            @include mq(dt) {
+                font-size: 24px;
+
+            }
+
+            @include mq(fhd) {
+                font-size: 30px;
+
+            }
+
+        }
+
+        p {
+            font-size: 14px;
+            @extend %montserrat-500it;
+            margin-bottom: 0;
+            letter-spacing: 0;
+
+            @include mq(dt) {
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+
+            @include mq(fhd) {
+                margin-bottom: 0px;
+            }
+
+        }
+
+    }
+
+    &__subtitle {
+        max-width: 80%;
+        margin: 0 auto;
+        font-size: 14px;
+
+
+        @include mq(lg) {
+            font-size: 16px;
+        }
+
+
+        @include mq(fhd) {
+            font-size: 24px;
+        }
+    }
+
+    &__image {
+        height: 69px;
+        margin-bottom: 17px;
+
+        @include mq(sm) {
+            height: 90px;
+        }
+
+        @include mq(lg) {
+            height: 120px;
+        }
+
+        @include mq(dt) {
+            height: 140px;
+            margin-bottom: 24px;
+        }
+
+        @include mq(fhd) {
+            height: 158px;
+            margin-bottom: 40px;
+
+        }
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    h2 {
+
+        font-size: 24px;
+        line-height: 1.3;
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
+        text-align: center;
+
+        @include mq(sm) {
+            font-size: 32px;
+            grid-column: 1/5;
+            margin-bottom: 14px;
+        }
+
+        @include mq(lg) {
+            font-size: 36px;
+            margin-bottom: 22px;
+        }
+
+        @include mq(dt) {
+            margin-bottom: 20px;
+        }
+
+        @include mq(fhd) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__decor-glow-right,
+    &__decor-glow-left {
+        display: none;
+
+        @include mq(sm) {
+            display: block;
+            position: absolute;
+            z-index: 0;
+            --width: 600px;
+            --height: 600px;
+            width: var(--width);
+            height: var(--height);
+            opacity: .3;
+            border-radius: 50%;
+            filter: blur(40px);
+
+
+            // CSS Color 3 синтаксис (hsla з комами), але як РЯДОК
+            // background: radial-gradient(46.65% 46.65% at 50% 50%,
+            //     #{'hsla(var(--h), var(--s), var(--l), var(--a1))'} 0%,
+            //     #{'hsla(var(--h), var(--s), var(--l), var(--a2))'} 79.17%,
+            //     #{'hsla(var(--h), var(--s), var(--l), 0)'} 100%);
+        }
+
+        @include mq(lg) {
+            --width: 800px;
+            --height: 800px;
+        }
+
+        @include mq(dt) {
+            --width: 1000px;
+            --height: 1000px;
+        }
+    }
+
+    &__decor-glow-right {
+        background: radial-gradient(46.65% 46.65% at 50% 50%,
+                #f40f3e 0%,
+                rgba(244, 15, 62, 0.34) 79.17%,
+                rgba(244, 15, 62, 0) 99.99%);
+
+        @include mq(sm) {
+            left: calc(100% - var(--width)/2);
+        }
+    }
+
+    &__decor-glow-left {
+        top: 60%;
+        background: radial-gradient(46.65% 46.65% at 50% 50%, #004469 0%, rgba(0, 68, 105, 0.34) 79.17%, rgba(0, 68, 105, 0) 99.99%);
+
+        @include mq(sm) {
+            right: calc(100% - var(--width)/2);
+        }
+    }
+
+}

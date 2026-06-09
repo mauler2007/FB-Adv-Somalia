@@ -1,0 +1,40 @@
+@import "global/reset";
+@import "global/vars";
+@import "global/mixins";
+@import "global/global";
+@import "global/fonts";
+@import "global/libs";
+
+// @import "components/_img"; // локальный  файл стилей  для позиционирования флагов отключил для пересборки
+@import "components/_fflag"; // глобальный файл стилей  для позиционирования флагов
+@import "components/_button";
+@import "components/_title";
+@import "components/_container";
+// @import "components/_payments";
+// @import "components/_therms";
+// @import "components/_marque";
+@import "components/_soc-networks";
+// @import "components/_app-links";
+// @import "components/_card";
+
+// @import "blocks/_parent";
+@import "blocks/_switcher";
+@import "blocks/_header";
+@import "blocks/_logo";
+@import "blocks/_top";
+@import "blocks/_promo-popup";
+@import "blocks/_become";
+@import "blocks/_form-cf7-countrycode-copy";
+// @import "blocks/_how-join";
+// @import "blocks/_prize";
+// @import "blocks/_table";
+// @import "blocks/_terms";
+// @import "blocks/_popupNewDesign";
+// @import "blocks/_popup-customization"; // отключить при билде
+// @import "blocks/_promo";
+// @import "blocks/_promoNoSlider";
+// @import "blocks/_instruction";
+
+@import "blocks/_footer";
+// @import "blocks/_formStyle"; // отключил для пересборки
+@import "blocks/_intlTelInput"; // файл стилей  для позиционирования флагов баблиотеки отключил для пересборки

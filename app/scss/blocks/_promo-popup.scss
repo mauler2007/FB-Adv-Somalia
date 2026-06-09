@@ -1,0 +1,154 @@
+.promo-popup {
+    position: fixed;
+    inset: 0;
+    display: none;
+    z-index: 9999;
+    color: $black;
+
+    &.active {
+        display: block;
+    }
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(5px);
+    }
+
+    &__content {
+        background: #ffb300;
+        border-radius: 10px;
+        padding: 15px 15px 0 15px;
+        max-width: 450px;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        // gap: 15px;
+        flex-direction: column;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @include mq(lg) {
+            padding: 26px 20px 0 26px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            max-width: 700px;
+        }
+
+    }
+
+    &__text {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        text-align: start;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include mq(lg) {
+            width: 50%;
+        }
+
+        h3 {
+            font-size: 24px;
+            @extend %montserrat-800;
+            margin-bottom: 20px;
+            line-height: 1;
+
+            @include mq(sm) {
+                font-size: 30px;
+            }
+
+            @include mq(lg) {
+                margin-bottom: clamp(40px, 4vw, 81px);
+            }
+
+        }
+
+        p {
+            max-width: clamp(191px, 80%, 400px);
+            font-size: 16px;
+            line-height: 1.1;
+
+            @include mq(sm) {
+                font-size: 20px;
+            }
+        }
+    }
+
+    &__img {
+        height: 175px;
+        position: relative;
+
+        @include mq(lg) {
+            max-width: 50%;
+            width: 100%;
+            align-self: flex-end;
+            display: flex;
+            justify-content: flex-end;
+            height: 280px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            bottom: 80%;
+            right: 0;
+            width: 55px;
+            height: 55px;
+            background-image: url('../images/uz/decor/figure.png');
+            background-size: cover;
+            background-position: center;
+
+            @include mq(lg) {
+                bottom: 89%;
+                right: 45%;
+                width: 69px;
+                height: 69px;
+            }
+        }
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+
+    }
+
+
+    &__close {
+        // position: absolute;
+        // top: 10px;
+        // right: 15px;
+        margin-inline-start: auto;
+
+
+        @include mq(lg) {
+            width: 100%;
+            text-align: end;
+        }
+
+        button {
+            line-height: .6;
+            background: none;
+            border: none;
+            font-size: 40px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+
+// /* mobile */
+// @media (max-width: 600px) {
+//     .promo-popup__content {
+//         flex-direction: column;
+//         text-align: center;
+//     }
+// }

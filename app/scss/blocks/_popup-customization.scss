@@ -1,0 +1,175 @@
+.popup {
+    &__block {
+        padding: 15px 35px 30px 35px;
+        max-width: 708px;
+        filter: drop-shadow(0px 10px 50px rgba(0, 0, 0, 0.2));
+        border: none;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+        margin-inline: 20px;
+
+        @include mq(xs) {
+            padding: 15px 125px 30px 125px;
+            margin-inline: 10px;
+        }
+        @include mq(sm) {
+            padding: 15px 200px 30px 200px;
+            margin-inline: 10px;
+        }
+
+        @include mq(md) {
+            margin-inline: 10px;
+        }
+
+    }
+
+    &__wrapper {
+        // position: relative;
+        color: $accent;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__decor {
+        display: block;
+        position: absolute;
+        object-fit: cover;
+    }
+
+    &__decor--fball {
+        height: auto;
+        transform: translate(-30%, -30%);
+        top: 0;
+        // width: 56px;
+        width: clamp(56px, 17vw ,86px) ;
+
+        left: 0;
+
+        @include mq(md) {
+            top: unset;
+            left: unset;
+            bottom: 0;
+            right: 0;
+            transform: translate(42%, 47%) rotate(4deg);
+            width: 194px;
+        }
+    }
+
+    &__decor--bball {
+        width: clamp(83px, 25vw ,113px) ;
+        height: auto;
+        right: 0;
+        bottom: 0;
+        transform: translate(25%, 30%) rotate(0);
+
+        @include mq(md) {
+            right: unset;
+            bottom: unset;
+            top: 0;
+            left: 0;
+            width: 113px;
+            height: auto;
+            transform: translate(-50%, -50%) rotate(83deg);
+                top: unset;
+    transform: translate(-38%, -27%) rotate(70deg);
+    bottom: -25%;
+        }
+    }
+
+    &__close a {
+        background: unset;
+        font-size: 0;
+        color: transparent;
+        &::after,
+        &::before {
+            background-color: $white;
+            transition: opacity 0.3s linear;
+        }
+
+        &:hover {
+
+            &::before,
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    //   &__number {
+    //     max-width: 89%;
+    //     margin-right: 0;
+    //     margin-top: 0;
+    //     &:not(:last-child) {
+    //       margin-bottom: 30px;
+    //       @include breakpoint($middle-bp) {
+    //         margin-bottom: 20px;
+    //       }
+    //       @include breakpoint($mobile-bp) {
+    //         align-items: center;
+    //       }
+    //     }
+    //     &:first-child,
+    //     &:nth-child(2),
+    //     &:nth-child(3),
+    //     &:nth-child(4) {
+    //       margin-left: 0;
+    //     }
+
+    //     &:not(:first-child) {
+    //       .popup__text {
+    //         margin-left: 0px;
+    //       }
+    //     }
+    //     &::before {
+    //       font-size: 40px;
+    //       @extend %montserrat-800it;
+    //       min-width: 32px;
+    //       @include breakpoint($desktop-bp) {
+    //         @include adaptiv-font(54, 24);
+    //       }
+    //       @include breakpoint($mobile-bp) {
+    //         min-width: 18px;
+    //         margin-right: 0;
+    //       }
+    //     }
+    //   }
+    //   &__text {
+    //     padding-left: 30px;
+    //     font-size: 20px;
+    //     letter-spacing: -0.02em;
+
+    //     @include breakpoint($desktop-bp) {
+    //       @include adaptiv-font(28, 14);
+    //     }
+    //     @include breakpoint($middle-bp) {
+    //       padding-left: 20px;
+    //     }
+    //     @include breakpoint($mobile-bp) {
+    //       padding-left: 11px;
+    //     }
+    //   }
+
+    //   &__button {
+    //     margin-top: 50px;
+    //     margin-bottom: 0;
+    //     @include breakpoint($desktop-bp) {
+    //       margin-top: 40px;
+    //       @include adaptiv-font(26, 14);
+    //     }
+    //     @include breakpoint($middle-bp) {
+    //       margin-top: 30px;
+    //     }
+    //   }
+
+    //   &__btn {
+    //     border-radius: 6px;
+    //     font-style: normal;
+    //     font-size: 20px;
+    //     margin-bottom: 0;
+    //     letter-spacing: 0;
+    //     @include breakpoint($desktop-bp) {
+    //       @include adaptiv-font(26, 14);
+    //     }
+    //   }
+}

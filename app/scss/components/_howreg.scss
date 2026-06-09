@@ -1,0 +1,60 @@
+.howreg {
+  margin-left: auto;
+  margin-right: 40px;
+  @include adaptiv-font(18, 12);
+
+  @include breakpoint($mobile-bp) {
+    display: none;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    transition: color 0.3s linear;
+
+    &:hover {
+      color: $white;
+      -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+      -webkit-mask-size: 200%;
+      animation: shine 2s infinite;
+    }
+
+    @keyframes shine {
+      from {
+        mask-position: -50%;
+        -webkit-mask-position: 150%;
+      }
+
+      to {
+        mask-position: -50%;
+        -webkit-mask-position: -50%;
+      }
+    }
+  }
+
+  &__svg {
+    width: 2vw;
+    height: 2vw;
+    min-height: 25px;
+    min-width: 25px;
+
+    use {
+      fill: $white;
+      transition: fill 0.3s linear;
+
+    }
+  }
+
+  &__text {
+    padding-right: 2em;
+    color: $white;
+    border-right: 1px solid $white;
+
+    span {
+      display: block;
+    }
+  }
+}

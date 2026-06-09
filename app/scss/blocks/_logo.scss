@@ -1,0 +1,38 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0;
+  }
+
+  svg {
+    width: 114px;
+    height: auto;
+    // width: 88px;
+    // width: 90px;
+    // width: 40vw;
+    // height: 4.2vw;
+
+    // @include mq(xs) {
+    //   width: 89px;
+    //   height: 17px;
+    //   width: 130px;
+    //   height: 15px;
+    // }
+    @include mq(lg) {
+      width: 160px;
+      max-width: unset;
+      max-height: unset;
+    }
+    @include mq(fhd) {
+      width: 302px;
+      max-width: unset;
+      max-height: unset;
+    }
+  }
+}

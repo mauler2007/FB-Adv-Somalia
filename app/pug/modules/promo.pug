@@ -1,0 +1,62 @@
+block promo
+mixin slide-item (bgrImg,tournamentLogo,logoLeft,logoRight,leftName,rightName,time,date)
+    .promo__item
+        .promo__picture
+          img.promo__image(src=`images/slide/${bgrImg}` alt='players')
+          .promo__picture-filter
+        .promo__match
+            .promo__event
+              .promo__team.promo__team--left
+                .promo__left-image
+                  img.promo__left-img(src=`images/slide/${logoLeft}` alt="team-logo")
+                .promo__name 
+                  span!= `${leftName}` 
+              .promo__team.promo__team--right
+                .promo__right-image
+                  img.promo__right-img(src=`images/slide/${logoRight}` alt="team-logo")
+                .promo__name 
+                  span!= `${rightName}`          
+            .promo__tournament
+              .promo__tournament-box 
+                img.promo__tournament-logo(src=`images/slide/${tournamentLogo}` alt="tournament-logo")
+            .promo__kefs 
+                .promo__kef-box
+                    .promo__kef.promo__kef--left
+                        span 01.11
+                span                        
+                .promo__kef-box
+                    .promo__kef.promo__kef--center
+                        span 01.11
+                span                        
+                .promo__kef-box
+                    .promo__kef.promo__kef--right
+                        span 01.11
+            .promo__date
+                time(datetime="2022-01-18T09:54") 
+                    span 17:00
+                div  
+                time(datetime="2022-01-18T09:54") 
+                    span 17:00                                  
+            //- include buttonEllipse
+            //- +customButton('btn-7 custom-btn', 'data-modal="modal"')
+
+//- mixin slide-text (title, promocode)
+//-   .promo__item
+//-     .title.title--slide 
+//-       h1.title__text!=`${title}`
+//-         span.title__num 
+//-           | <span data-bonus-value="euro">110&nbsp;euro</span> + 30% Extra!
+//-       p.title__promo
+//-         span PromoCode 
+//-         span.separator |
+//-         span(data-code=`${promocode}`) promocode
+
+.promo
+  //- +slide-v1()
+  +slide-item('slidePromo757x426.png','UEFA_Champions_League_logo-black.svg','MUnited.png','MUnited.png','Man United','  Newcastle','19:10','21.04')
+  +slide-item('slidePromo26-1.png','UEFA_Champions_League_logo.svg','MUnited.png','MUnited.png','Man United','  Newcastle','19:10','21.04')
+  +slide-item('slidePromo29-1.png','UEFA_Champions_League_logo.svg','MUnited.png','MUnited.png','Man United','  Newcastle','19:10','21.04')
+//-   +slide-item('slidePromo757x426.png','UEFA_Champions_League_logo.svg','MUnited.png','MUnited.png','Man United','  Newcastle','19:10','21.04')
+//-   +slide-item('slidePromo07.png','UEFA_Champions_League_logo.svg','MUnited.png','MUnited.png','Man United','  Newcastle','19:10','21.04')
+
+//- tournament-logo

@@ -1,0 +1,81 @@
+$white: #fff;
+$accent: #FFBB04;
+$yellow: #f7e335;
+$blue: #0353FE;
+$dark-blue: #0B0B33;
+$pink: #f40f3e;
+$black: #0B0B33;
+$grey: #333;
+$radius-xs: 5px;
+$radius-promo: 10px;
+$radius-promo-lg: 20px;
+
+$shadow: 0px 0px 13.1486px rgba(255, 255, 255, 0.5);
+
+$xxl-bp: 1350px;
+$desktop-bp: 1200px;
+$tablet-bp: 992px;
+$middle-bp: 768px;
+$mobile-bp: 576px;
+
+%montserrat-800it {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+%montserrat-800 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+}
+
+%montserrat-600it {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+%montserrat-700it {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+%montserrat-900 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+}
+
+%montserrat-700 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+%montserrat-600 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+%montserrat-500it {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+%montserrat-400 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+%montserrat-300it {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+%visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}

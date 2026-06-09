@@ -1,0 +1,132 @@
+.app-links {
+    background-color: $dark-blue;
+    padding-top: 15px;
+    @include mq(sm) {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    order: 0;
+    background-color: $black;
+    }
+    @include mq(lg) {
+padding-top: 22px;
+    }
+    @include mq(dt) {
+    padding-top: 42px;
+    padding-bottom: 46px;
+    }
+    @include mq(fhd) {
+    padding-top: 100px;
+    padding-bottom: 0px;
+    }
+
+    .animated-payment-el {
+visibility: hidden;
+opacity: 1;
+    }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    z-index: 1;
+    grid-gap: 0 10px;
+    max-width: 326px;
+    margin: 0 auto;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // gap: 0 10px;
+    // z-index: 2;
+    padding-bottom: 34px;
+    /* align-content: inherit; */
+
+    @include mq(sm) {
+      display: flex;
+      padding-bottom: 30px;
+      margin-right: 0px;
+      max-width: 100%;
+      align-items: flex-end;
+
+    }
+    @include mq(lg) {
+        align-items: center;
+      padding-bottom: 54px;
+      margin-right: 0;
+    }
+    @include mq(dt) {
+      padding-bottom: 35px;
+      align-items: center;
+    }
+    @include mq(fhd) {
+      padding-bottom: 63px;
+          position: relative;
+    }
+  }
+  &__apps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1/3;
+    gap: 30px 10px;
+
+    @include mq(lg) {
+      gap: 30px 13px;
+    }
+  }
+
+  &__link {
+    font-size: 0;
+    color: transparent;
+    
+    @include mq(sm) {
+      display: flex;
+    }
+    // &:nth-child(1) {
+    //   justify-self: end;
+    //   grid-column: 1/2;
+    // }
+    // &:nth-child(2) {
+    //   justify-self: start;
+    //   grid-column: 2/3;
+    // }
+    &:hover {
+      svg {
+        fill: #100f0d;
+      }
+      .svg-title {
+        fill: $accent;
+      }
+    }
+
+    svg {
+      width: auto;
+      height: 37px;
+      fill: $white;
+      transition: fill 0.3s linear;
+      @include mq(sm) {
+        height: 25px;
+      }
+      @include mq(lg) {
+        height: 42px;
+      }
+    }
+
+    .svg-title {
+      fill: black;
+      transition: fill 0.3s linear;
+    }
+
+  }
+
+  &__payments {
+    grid-column: 1/3;
+    margin-bottom: 40px;
+    @include mq(sm) {
+      margin-bottom: 0px;
+      margin-right: auto;
+    }
+    @include mq(fhd) {
+margin-right: 50px;
+    }
+  }
+}

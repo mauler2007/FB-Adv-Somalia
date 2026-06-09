@@ -1,0 +1,128 @@
+.soc-networks {
+    display: none;
+    justify-content: center;
+    flex-direction: row-reverse;
+    // padding-bottom: 10px;
+    // padding-top: 10px;
+    gap: 8px;
+
+    @include mq(xs) {
+        display: flex;
+        order: 0;
+        margin-left: auto;
+    }
+    @include mq(fhd) {
+gap: 14px;
+    }
+    @include mq(fhd) {
+gap: 18px;
+    }
+
+    .footer__18icon {
+        display: none;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // height: 22px;
+        // width: 22px;
+        // transition: box-shadow 0.2s linear;
+        // border-radius: 50%;
+        margin: 0;
+        font-size: 0;
+        // background-color: $accent;
+        // padding-left: 2%;
+        // padding-right: 2%;
+
+        //     @include mq(sm) {
+        // height: 25px;
+        // width: 25px;
+        //     }
+        // @include mq(sm) {
+        //   height: 25px;
+        //   width: 25px;
+        // }
+
+        cursor: pointer;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        // &:first-child {
+        //   background-color: red;
+        //   @extend %mont-800;
+        //   pointer-events: none;
+        //   border: 1px solid white;
+        //   color: $white;
+        //   font-weight: 500;
+        //   font-size: 0.8em;
+        // }
+
+        svg {
+            width: 15px;
+            height: 15px;
+
+            @include mq(sm) {
+    width: 21px;
+    height: 21px;
+            }
+
+            // @include mq(sm) {
+            //   width: 15px;
+            //   height: 15px;
+            // }
+            use {
+                fill: $black;
+                transition: box-shadow 0.3s;
+                transition: fill 0.3s linear;
+            }
+
+            path {
+                fill: $white;
+                transition: fill 0.3s linear;
+            }
+
+            &.icon-fb {
+                path {
+                                   fill: $white;
+
+                }
+
+                rect {
+                    fill: $white;
+                    transition: fill 0.3s linear;
+                }
+            }
+
+        }
+
+        &:hover {
+
+            // background-color: $grey;
+            //   box-shadow: 0px 0px 20px rgba(255, 187, 4, 0.7);
+            svg {
+                path {
+                    fill: $accent;
+                }
+
+                &.icon-fb {
+                    rect {
+                        fill: #212121;
+                    }
+
+                    path {
+                        fill: $accent;
+                    }
+                }
+            }
+
+        }
+    }
+}

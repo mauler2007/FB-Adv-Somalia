@@ -1,0 +1,17 @@
+block promo
+
+mixin slide (bgrImg,tournamentLogo,logoLeft,logoRight,leftName,rightName,time,date)
+    a.promo__item(href="#")
+      .promo__picture 
+        picture 
+          source.promo__image(type="image/avif" srcset=`./images/promo/${bgrImg}.avif`)
+          source.promo__image(type="image/webp" srcset=`./images/promo/${bgrImg}.webp`)
+          img.promo__image(src=`./images/promo/${bgrImg}.png` width="881px" height="475px" alt="sportsmans")
+      //- img.promo__image(src=`images/promo/${bgrImg}` alt='players')
+      .promo__picture-filter
+    .promo__content
+      .ellipse-btn.ellipse-btn--promo.ellipse-btn--font
+        <span>Melhores Apostas Esportivas</span>
+.promo
+  +slide('promo_cutted_fhd_881x475','UEFA_Nations_League_2014.png','logo-left.png','logo-right.png','milanmilan milan','napoli','19:10','21.04')
+

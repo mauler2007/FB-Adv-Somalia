@@ -1,0 +1,37 @@
+@mixin breakpoint($br) {
+
+  @media (max-width: $br) {
+    @content;
+  }
+}
+
+@mixin mq($point) {
+
+  @each $breakpoint,
+  $widths in $breakpoint-widths {
+    @if $point==$breakpoint {
+      @media (min-width: $widths) {
+        @content;
+      }
+    }
+  }
+}
+
+/* Media queries */
+
+$breakpoint-widths: (fhd:1920px, dt: 1440px, lg: 1200px, md: 993px, sm: 768px, xs: 576px) !default;
+
+/* Container */
+
+$container-widths: (fhd: 1480px,dt: 1140px, lg: 900px, md: 750px, sm: 558px, xs: auto) !default;
+
+
+/* Responsive font size */
+
+$maxWidth: 1920; // width for maximum font size
+
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}

@@ -1,0 +1,90 @@
+//- breakpoints: {
+//-     320: {
+//-         spaceBetween: 20,
+//-     },
+//-     576: {
+//-         spaceBetween: 20,
+//-     },
+//-     768: {
+//-         spaceBetween: 30,
+//-     },
+//- }
+mixin instruction(modificator)
+    section.instruction(class=`instruction--${modificator}`)
+        .instruction__inner
+            .instruction__items 
+                #instructionNumberOne.instruction__number
+                    .instruction__content
+                        span.instruction__num(data-text="1") 1
+                        .instruction__box
+                            .instruction__action register on the site
+                            //- span  
+                            //- span 
+                .instruction__separator
+                #instructionNumberTwo.instruction__number
+                    .instruction__content.instruction__content--custom
+                        //- span
+                        span.instruction__num(data-text="1") 2
+                        .instruction__box               
+                            p.instruction__action make a deposit
+                        //-   span
+                        //- span
+                .instruction__separator
+                #instructionNumberThree.instruction__number
+                    .instruction__content
+                        span.instruction__num(data-text="1") 3
+                        .instruction__box
+                            p.instruction__action WIN with B&U
+                            //- span
+block wrapper 
+    .wrapper(style="opacity: 1;")
+        include header
+        main.main
+           
+            include top
+            include become
+            //- include become
+            //- include how-join
+            //- include prize
+            //- include table
+            //- include terms
+
+          
+            //- .app-links
+            //-     .container.container--fluid
+            //-         .app-links__inner
+            //-             .app-links__payments
+            //-                 include payments-methods
+            //-             .app-links__apps
+            //-                 a.app-links__link.animated-payment-el(href="#")
+            //-                     |link
+            //-                     include ../icons/iosApp
+
+            //-                 a.app-links__link.animated-payment-el(href="#")
+            //-                     |link 
+            //-                     include ../icons/androidApp
+
+    include footer-sprite
+    <div class="promo-popup" id="promoPopup">
+        <div class="promo-popup__overlay"></div>
+
+        <div class="promo-popup__content">
+            <div class="promo-popup__close" >
+                <button  id="popupClose">×</button>
+            </div>
+
+            <div class="promo-popup__text">
+                <h3>GANHE 2% A MAIS NA SUA COMISSÃO POR 6 MESES</h3>
+                <p>Restam apenas 5 vagas corra e seja o primeiro a participar!</p>
+            </div>
+
+            <div class="promo-popup__img">
+                picture
+                    source(type="image/avif" media="(min-width: 1200px)" srcset="./images/uz/popup/deposit-img.avif?v=2")
+                    source(type="image/webp" media="(min-width: 1200px)" srcset="./images/uz/popup/deposit-img.webp?v=2")                               
+                    source(type="image/avif" srcset="./images/uz/popup/deposit-img-mob@2x.avif?v=2")
+                    source(type="image/webp" srcset="./images/uz/popup/deposit-img-mob@2x.webp?v=2")                               
+                    img(src="./images/uz/popup/deposit-img-mob@2x.png?v=2" alt="valyuta" width="194" height="130")
+            </div>
+        </div>
+    </div>

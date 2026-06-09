@@ -1,0 +1,305 @@
+.langCheck {
+  --checker-rad-xs: 5px;
+  // display: none;
+  // right: 10px;
+  top: 0px;
+  // width: 56px;
+  height: 25px;
+
+  @include mq(xs) {
+    display: block;
+    // position: absolute;
+    z-index: 2;
+    right: 10px;
+    // height: 25px;
+    // width: 87px;
+    // top: 0;
+  }
+
+  @include mq(lg) {
+    height: 35px;
+    right: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: transparent;
+    border-radius: var(--checker-rad-xs);
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: flex;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 25px;
+      background-color: transparent;
+      z-index: 1;
+
+      @include mq(lg) {
+        width: 34px;
+      }
+    }
+
+    &:hover {
+      padding-bottom: 5px;
+      animation-name: bgShow;
+      animation-duration: 0.5s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+
+      @keyframes bgShow {
+        0% {
+          background-color: transparent;
+        }
+
+        100% {
+          background-color: rgb(180, 180, 180);
+        }
+      }
+
+      &::after {
+        animation-name: bgShow2;
+        animation-duration: 0.5s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+
+        @keyframes bgShow2 {
+          0% {
+            background-color: transparent;
+          }
+
+          100% {
+            background-color: rgb(200, 200, 200);
+          }
+        }
+      }
+
+      .langCheck__item {
+        &.selected {
+          order: 3;
+          opacity: 1;
+        }
+
+        &:not(.selected) {
+          position: relative;
+          order: 1;
+          animation-name: showItem;
+          animation-duration: 0.7s;
+          animation-timing-function: linear;
+          animation-fill-mode: forwards;
+          z-index: 1;
+          padding: 3px 0;
+
+          @include mq(sm) {
+            animation-name: showItemDesc;
+            animation-duration: 0.7s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+          }
+
+          &:hover {
+            transform: scale(1.05);
+            background-color: rgb(200, 200, 200);
+          }
+        }
+
+        @keyframes showItem {
+          0% {
+            opacity: 0;
+          }
+
+          25% {
+            opacity: 0;
+          }
+
+          100% {
+            opacity: 1;
+            font-weight: 700;
+            text-shadow: 1px 1px 1px #000;
+          }
+        }
+
+        @keyframes showItemDesc {
+          0% {
+            opacity: 0;
+          }
+
+          25% {
+            opacity: 0;
+          }
+
+          100% {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    opacity: 0.5;
+    transition: all 0.4s;
+    cursor: pointer;
+    order: 3;
+
+    &:hover {
+      opacity: 1 !important;
+    }
+
+    .icon {
+      // display: none;
+      display: flex;
+      // height: 21px;
+      right: 2%;
+      height: 17px;
+      width: 19px;
+      margin: 3px 6px 3px 6px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+
+      @include mq(lg) {
+        margin: 3px 6px 3px 6px;
+        display: flex;
+      }
+    }
+
+    .langContext {
+      font-style: normal;
+      font-family: "Montserrat", serif;
+      font-size: 10px;
+      text-transform: uppercase;
+      margin: 5px 1px;
+      text-shadow: 1px 1px 1px #000;
+      color: $white;
+
+      @include mq(lg) {
+        margin: 5px 0;
+      }
+
+      font {
+        font-style: normal;
+        font-family: "Montserrat", serif;
+      }
+    }
+
+    input {
+      display: flex;
+      position: absolute;
+      z-index: -1;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+
+    &.selected {
+      height: 25px;
+    //   background-color: #373737;
+background-color: transparent;
+      border-radius: 0 0 var(--checker-rad-xs) var(--checker-rad-xs);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      opacity: 1;
+      order: 1;
+
+      @include mq(lg) {
+        height: 35px;
+      }
+
+      .icon {
+        display: flex;
+
+        width: 17px;
+        height: 18px;
+        // background-size: 76px;
+        // background-size: 60px;
+        margin-left: 6px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+
+        @include mq(lg) {
+          width: 25px;
+          height: 25px;
+          margin-left: 9px;
+        }
+      }
+
+      .langContext {
+        font-size: 11px;
+        margin: 5px;
+
+        @include mq(lg) {
+          font-size: 16px;
+          margin: 5px 0;
+        }
+      }
+
+      .arrow {
+        width: 25px;
+        height: 100%;
+        // background-color: $accent;
+    background-color: transparent;
+        margin-left: 5px;
+        position: relative;
+
+        @include mq(lg) {
+          width: 34px;
+          margin-left: 10px;
+        }
+
+        &::before,
+        &::after {
+          content: "";
+          display: flex;
+                background-color: #fff;
+          height: 2px;
+          width: 7px;
+          border-radius: 50px;
+          position: absolute;
+          top: 50%;
+
+          @include mq(lg) {
+            width: 14px;
+          }
+        }
+
+        &::before {
+          left: 28%;
+          transform: rotate(45deg);
+
+          @include mq(lg) {
+            left: 16%;
+          }
+        }
+
+        &::after {
+          right: 28%;
+          transform: rotate(135deg);
+
+          @include mq(lg) {
+            right: 16%;
+          }
+        }
+      }
+    }
+
+    &.active {
+      display: none;
+    }
+
+    &:not(.selected) {
+      position: absolute;
+      top: 0;
+      order: 0;
+      opacity: 0;
+    }
+  }
+}

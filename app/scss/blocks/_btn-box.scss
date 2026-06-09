@@ -1,0 +1,189 @@
+.btn-box {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5vw 0 1.5vw;
+
+  @include breakpoint($xxl-bp) {
+    padding: 3.5vw 0 1.5vw;
+  }
+
+  @include breakpoint($tablet-bp) {
+    padding-top: 30px
+  }
+
+  &__new {
+    position: relative;
+
+    margin-bottom: 1.0em;
+    padding: 0 2.8em;
+
+    @extend %montserrat-500;
+    color: $white;
+    // font-size: 2.03vw;
+    font-size: clamp(18px, 1.93vw, 22px);
+    line-height: 2.5;
+    text-transform: uppercase;
+
+    border: 1px solid transparent;
+    // border-radius: 10px;
+    border-radius: 2em;
+    background: linear-gradient(90deg, #0354FF -0.35%, #1795F9 99.55%);
+    box-shadow: -8.48408px 11.0293px 34.7847px -16.9682px #055AFF, 0px 9px 6px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    transition: border-color 0.3s linear,
+      box-shadow 0.3s linear;
+
+    @include breakpoint($middle-bp) {
+      // border-radius: 7px;
+      box-shadow: 0 0 10px #1183fb;
+    }
+
+    @include breakpoint($mobile-bp) {
+      width: 70vw;
+      text-align: center;
+      padding: 0 1em;
+      font-size: 5vw;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: -40px;
+      top: -150px;
+      z-index: 1;
+      display: block;
+      width: 7rem;
+      height: 20rem;
+      margin-left: 60px;
+
+      background: #fff;
+      opacity: 0.5;
+      transform: rotate(45deg);
+      transition: all 0.3s;
+      animation-name: slideme;
+      animation-duration: 4s;
+      animation-delay: 0.05s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+
+    &:hover {
+      box-shadow: 0 0 4rem #1183fb;
+    }
+
+    &:active {
+      box-shadow: 0 0 4rem #1183fb;
+    }
+
+    &:focus {
+      border-color: 1px solid $black;
+    }
+  }
+
+  &__old {
+    margin-bottom: 1.1em;
+    padding: 0 40px;
+    padding: 0 3.5em;
+
+    font-family: 'Arial';
+    font-weight: 600;
+    font-size: 1.1vw;
+
+    color: $white;
+    text-transform: uppercase;
+    line-height: 2.5;
+    border-radius: 10px;
+    border: 2px solid $white;
+    transition: color 0.3s linear,
+      border-color 0.3s linear,
+      outline-color 0.3s linear;
+
+    @include breakpoint($middle-bp) {
+      padding: 0 1em;
+
+      line-height: 2;
+      font-weight: 400;
+      border-width: 1px;
+      border-radius: 7px;
+    }
+
+    @include breakpoint($mobile-bp) {
+      font-size: 4vw;
+      border-radius: 4px;
+    }
+
+    &:hover {
+      color: $accent;
+    }
+
+    &:active {
+      border-color: $accent;
+    }
+
+    &:focus {
+      outline-color: $accent;
+    }
+  }
+
+  &__rules {
+    padding: 2px;
+    
+    @extend %montserrat-500;
+    font-size: clamp(14px, 1.12vw, 19px);
+    color: $white;
+    text-decoration: underline;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    transition: color 0.3s linear,
+      border-color 0.3s linear,
+      outline-color 0.3s linear;
+
+    @include breakpoint($mobile-bp) {
+      font-size: clamp(15px, 3.12vw, 19px);
+    }
+
+    &:hover {
+      -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+      -webkit-mask-size: 200%;
+      animation: shine 2s infinite;
+    }
+
+    @keyframes shine {
+      from {
+        -webkit-mask-position: 150%;
+      }
+
+      to {
+        -webkit-mask-position: -50%;
+      }
+    }
+
+    &:active {
+      border-color: $accent;
+    }
+
+    &:focus {
+      outline-color: $accent;
+    }
+  }
+
+  @keyframes slideme {
+    0% {
+      left: -130px;
+      margin-left: 0px;
+    }
+
+    30% {
+      left: 110%;
+      margin-left: 80px;
+    }
+
+    100% {
+      left: 110%;
+      margin-left: 80px;
+    }
+  }
+}

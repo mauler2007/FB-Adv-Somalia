@@ -1,0 +1,286 @@
+.button {
+    //   padding: 0.5em 0.5em;
+    min-width: 150px;
+    display: inline-block;
+    text-align: center;
+    color: $black;
+    // @include adaptiv-font(26, 12);
+    line-height: 50px;
+    @extend %montserrat-600;
+
+    text-transform: uppercase;
+    border-radius: $radius-xs;
+    //   background: linear-gradient(360deg, rgb(255, 187, 0) 0%, #ffe300 100%),
+    //     #ffffff;
+    // box-shadow: 0px 0px 15.3811px rgba(255, 195, 1, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    position: relative; // Это важно добавить
+    //   &:not(.ellipse-btn--promo) {
+    // animation: 2s linear 1s infinite glow;
+
+    // @keyframes glow {
+    //   50% {
+    //     box-shadow: 0px 0px 50px 0px rgba(244, 15, 62, 0.5);
+    //   }
+    // }
+    //   }
+
+    @include mq(sm) {
+        min-width: 300px;
+        border-radius: 6px;
+    }
+
+    @include mq(md) {
+        min-width: unset;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    @include mq(dt) {
+        font-size: 20px;
+    }
+
+    // &:active {
+    //   background: linear-gradient(360deg, rgb(255, 187, 0) 0%, #FFE300 100%), #FFFFFF;
+    // }
+
+    &:hover {
+        background: $accent;
+        box-shadow: 0px 2px 10px 0px rgba($accent, 0.5),
+            0px -2px 10px 0px rgba($accent, 0.5);
+    }
+
+
+    &--font {
+        @include mq(dt) {
+            font-size: 28px;
+        }
+
+        @include mq(fhd) {
+            font-size: 30px;
+        }
+    }
+
+    &.custom-btn {
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.7s ease;
+        position: relative;
+        // box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+        //   7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+        outline: none;
+        // @extend %Montserrat-600;
+
+        overflow-x: hidden; // Это важно добавить
+    }
+
+    &.btn-7 {
+        background: $accent;
+        // background: linear-gradient(
+        //   0deg,
+        //   rgba(255, 151, 0, 1) 0%,
+        //   rgba(251, 75, 2, 1) 100%
+        // );
+        // line-height: 50px;
+        padding: 0;
+        // border: none;
+        border: 1px solid $accent;
+
+
+        &::after,
+        &::before {
+            position: absolute;
+            content: "";
+            right: 0;
+            bottom: 0;
+            // background: rgba(251,75,2,1);
+            background: $accent;
+
+            // box-shadow:
+            //  -7px -7px 20px 0px rgba(255,255,255,.9),
+            //  -4px -4px 5px 0px rgba(255,255,255,.9),
+            //  7px 7px 20px 0px rgba(0,0,0,.2),
+            //  4px 4px 5px 0px rgba(0,0,0,.3);
+            transition: all 0.7s ease;
+        }
+
+        &::before {
+            height: 0%;
+            width: 2px;
+        }
+
+        &::after {
+            width: 0%;
+            height: 2px;
+        }
+
+        &:hover {
+            //   color: $accent;
+            background: transparent;
+            border-color: transparent;
+
+            &::before {
+                height: 100%;
+            }
+
+            &::after {
+                width: 100%;
+            }
+
+            span {
+                &::before {
+                    height: 100%;
+                }
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+
+        span {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            letter-spacing: 0;
+
+            &::before,
+            &::after {
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 0;
+                // background: rgba(251,75,2,1);
+                background: $accent;
+                // box-shadow:
+                //  -7px -7px 20px 0px rgba(255,255,255,.9),
+                //  -4px -4px 5px 0px rgba(255,255,255,.9),
+                //  7px 7px 20px 0px rgba(0,0,0,.2),
+                //  4px 4px 5px 0px rgba(0,0,0,.3);
+                transition: all 0.7s ease;
+            }
+
+            &::before {
+                width: 2px;
+                height: 0%;
+            }
+
+            &::after {
+                height: 2px;
+                width: 0%;
+            }
+        }
+    }
+
+    &.button--base {
+        border: 1px solid $white;
+        color: $white;
+
+        &:hover {
+            // background: $pink;
+            box-shadow: 0px 2px 10px 0px rgba(255, 255, 255, 0.5),
+                0px -2px 10px 0px rgba(255, 256, 255, 0.5);
+            border-color: transparent;
+        }
+
+        &::after,
+        &::before {
+            position: absolute;
+            content: "";
+            right: 0;
+            bottom: 0;
+            background: $white;
+            transition: all 0.7s ease;
+        }
+
+        &::before {
+            height: 0%;
+            width: 2px;
+        }
+
+        &::after {
+            width: 0%;
+            height: 2px;
+        }
+
+        &:hover {
+            //   color: $accent;
+            background: transparent;
+            border-color: transparent;
+
+            &::before {
+                height: 100%;
+            }
+
+            &::after {
+                width: 100%;
+            }
+
+            span {
+                &::before {
+                    height: 100%;
+                }
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+
+        span {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            letter-spacing: 0;
+
+            &::before,
+            &::after {
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 0;
+                background: $white;
+                transition: all 0.7s ease;
+            }
+
+            &::before {
+                width: 2px;
+                height: 0%;
+            }
+
+            &::after {
+                height: 2px;
+                width: 0%;
+            }
+        }
+    }
+
+    &.button--footer {
+        background-color: $accent;
+        color: $black;
+        border-color: $accent;
+        transition: color 0.3s linear, background-color 0.3s linear, box-shadow 0.3s linear;
+        font-size: 14px;
+
+        @include mq(sm) {
+            background-color: $accent;
+            font-size: 12px;
+        }
+
+        @include mq(fhd) {
+            font-size: 14px;
+        }
+
+        &:hover {
+            box-shadow: 0px 2px 10px 0px rgba($accent, 0.5),
+                0px -2px 10px 0px rgba($accent, 0.5);
+
+            color: $white;
+
+        }
+    }
+}

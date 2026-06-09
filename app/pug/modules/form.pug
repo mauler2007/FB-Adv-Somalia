@@ -1,0 +1,15 @@
+block form 
+section.form#form
+  .form__inner 
+    h3.form__title Comments
+    p The minimum comment length is 50 characters. comments are moderated
+    form#formReg(action="/")
+      label.form__label(for="textarea")
+        textarea#textarea(name="textarea", rows="6" placeholder="Hello...")    
+      label.form__label(for="name") 
+        input.form__input(type="text" id="name" name="name" value="" placeholder="Your name " required) 
+      label.form__label(for="email")
+        input.form__input(type="email" id="email" name="email" value="" placeholder="Your e-mail (optional)")                          
+      .form__actions
+        button.button.button--form(type="submit") send
+      .wpcf7-response-output Спасибо за Ваше сообщение. Оно успешно отправлено.

@@ -1,0 +1,85 @@
+html {
+    box-sizing: border-box;
+    background-blend-mode: overlay;
+    background-color: #181818;
+    scroll-behavior: smooth;
+}
+
+.payments__icon {
+    width: 100px;
+    height: 100px;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+body {
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.3;
+    color: $white;
+    font-size: 16px;
+    overflow-x: hidden;
+    background-color: $blue;
+    // letter-spacing: -0.02em;
+
+    &.no-scroll {
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+    }
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1 0 auto;
+
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    clip-path: inset(100%);
+}
+
+.gradient {
+    background: -o-linear-gradient(180deg, #fff900 -73.86%, #ffd400 38.81%);
+    background: linear-gradient(180deg, #fff900 -73.86%, #ffd400 38.81%);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}

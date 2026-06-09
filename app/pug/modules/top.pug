@@ -1,0 +1,100 @@
+mixin payment(svgClassName,iconNameFromSprite)
+    div.payments__item
+        svg(class=`${svgClassName}`)
+            use(xlink:href=`./images/sprite.svg#${iconNameFromSprite}`)
+
+section.top                
+  
+    .container
+        .top__inner 
+            .top__title     
+                .top__title-layout
+                h1 
+                    span.top__title-text 
+                        span.reveal-wrap
+                            span.reveal-target Run Your Own Business with B&U
+                    span.top__title-badge Start today and earn from EVERY deposit and withdrawal!
+            .top__scene-container
+                .scene
+                    .scene__item.scene__item--screen.animated-image
+                        picture
+                            source(type="image/avif" srcset="./images/meta/bg.avif")
+                            source(type="image/webp" srcset="./images/meta/bg.webp")                               
+                            img(src="./images/meta/bg.png" alt="men" width="500" height="390")
+                    
+                .top__btn-block
+                    a.button.button--pink.custom-btn.btn-7(href="#")
+                        span become an agent  
+                        
+                .top__scene-container-layout
+            ul.top__benefits
+                li.top__benefits-item   
+                    p 1. Become an Agent
+                    <svg preserveAspectRatio="none" height="1" viewBox="0 0 588 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0.5H588" stroke="#0B0B33"/>
+                    </svg>
+
+                li.top__benefits-item   
+                    p 2. Help players handle deposits and withdrawals
+                    <svg preserveAspectRatio="none" height="1" viewBox="0 0 588 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0.5H588" stroke="#0B0B33"/>
+                    </svg>
+
+                li.top__benefits-item   
+                    p 3. Earn commission: 8% from deposits and 2% from withdrawals
+            ul.top__advantages
+                li.top__advantages-item.top__advantages-item--1
+                    .top__advantages-image
+                        picture
+                            source(type="image/avif" srcset="./images/uz/advantages/adv-1.avif")
+                            source(type="image/webp" srcset="./images/uz/advantages/adv-1.webp")    
+                            img(src="./images/uz/advantages/adv-1.png" alt="clock" width="50" height="50")                   
+                    p.break-all 10K Agents Worldwide
+                li.top__advantages-item.top__advantages-item--2
+                    .top__advantages-image
+                        picture
+                            source(type="image/avif" srcset="./images/uz/advantages/adv-2.avif")
+                            source(type="image/webp" srcset="./images/uz/advantages/adv-2.webp")    
+                            img(src="./images/uz/advantages/adv-2.png" alt="clock" width="50" height="50")                    
+                    p Trusted Since 2019
+                li.top__advantages-item.top__advantages-item--3
+                    .top__advantages-image
+                        picture
+                            source(type="image/avif" srcset="./images/uz/advantages/adv-3.avif")
+                            source(type="image/webp" srcset="./images/uz/advantages/adv-3.webp")    
+                            img(src="./images/uz/advantages/adv-3.png" alt="clock" width="50" height="50")                    
+                    p Regular Benefits
+                li.top__advantages-item.top__advantages-item--4
+                    .top__advantages-image
+                        picture
+                            source(type="image/avif" srcset="./images/uz/advantages/adv-4.avif")
+                            source(type="image/webp" srcset="./images/uz/advantages/adv-4.webp")    
+                            img(src="./images/uz/advantages/adv-4.png" alt="clock" width="50" height="50")                      
+                 
+                    p 24/7 Support                    
+                li.top__advantages-item.top__advantages-item--5
+                    .top__advantages-image
+                        picture
+                            source(type="image/avif" srcset="./images/uz/advantages/adv-5.avif")
+                            source(type="image/webp" srcset="./images/uz/advantages/adv-5.webp")    
+                            img(src="./images/uz/advantages/adv-5.png" alt="clock" width="50" height="50")                     
+                    p Easy Mobile App
+                li.top__advantages-item.top__advantages-item--6
+                    .top__advantages-image
+                        picture
+                            source(type="image/avif" srcset="./images/uz/advantages/adv-6.avif")
+                            source(type="image/webp" srcset="./images/uz/advantages/adv-6.webp")    
+                            img(src="./images/uz/advantages/adv-6.png" alt="percents" width="50" height="50")                     
+                    p High commissions
+
+            .top__btn-block
+                a.button.button--yellow.custom-btn.btn-7(href="#")
+                    span agent ol  
+                a.button.button--base(href="#")
+                    span batafsil                    
+                    //- хочу уточнить  тут також орієнтуватися на  переклад як в макеті ?
+                    //- і ще
+                    //- 1. в першій картці  на мобільному два слова  а на десктопі одне,  як правильно ?
+                    //- 2. дві останні картки на мобільному  розташовані не так як на інших ширинах (поміняні місцями) ,.https://betandyou.com/en/line/football/2708505-world-cup-2026-qualification-europe/282489211-italy-norway
+
+                    //- bugundan boshlab har bir depozit va pulni yechib olishdan daromad toping!

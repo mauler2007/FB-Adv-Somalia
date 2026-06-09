@@ -1,0 +1,143 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTMLд
+<i class="icon icon-home"></i>
+*/
+.icon {
+  width: 12px;
+  height: 12px;
+
+  // 
+  //   width: 19px;
+  //   height: 18px;
+
+  &-pt {
+    // background-image: url('../images/spriteMobile.png');
+    // background-position: -4px -39px;
+
+    
+      background-image: url('../images/sprite.png');
+      background-position: 0px -36px;
+  }
+
+  &-ru {
+    // background-image: url('../images/spriteMobile.png');
+    // background-position: -58px -3px;
+
+    
+      background-image: url('../images/sprite.png');
+      background-position: -54px -0px;
+  }
+
+  &-br {
+    // background-image: url('../images/spriteMobile.png');
+    // background-position: -24px -44px;
+
+    
+      background-image: url('../images/sprite.png');
+      background-position: -18px 0px;
+  }
+
+  // canada
+  &-en {
+    // background-image: url('../images/spriteMobile.png');
+    // background-position: -40px -3px;
+
+    
+      background-image: url('../images/sprite.png');
+      background-position: -36px 55px;
+  }
+
+  // finland 
+  &-fi {
+    // background-image: url('../images/spriteMobile.png');
+    // background-position: -21px -3px;
+
+    
+      background-image: url('../images/sprite.png');
+      background-position: -18px -54px;
+  }
+
+  // germany
+  &-de {
+    // background-image: url('../images/spriteMobile.png');
+    // background-position: -3px -21px;
+
+    
+      background-image: url('../images/sprite.png');
+      background-position: 0px 36px;
+  }
+
+  // greece
+  &-el {
+    // background-image: url('../images/spriteMobile.png');
+    // background-position: -22px -21px;
+
+    
+      background-image: url('../images/sprite.png');
+      background-position: -18px -18px;
+  }
+
+  // ireland FRANCE
+  &-fr {
+    // background-image: url('../images/spriteMobile.png');
+    // background-position: -3px -3px;
+
+    
+      background-image: url('../images/sprite.png');
+      background-position: 0px 0px;
+  }
+
+  // mexico 
+  &-es {
+    // background-image: url('../images/spriteMobile.png');
+    // background-position: -58px -40px;
+
+    
+      background-image: url('../images/sprite.png');
+      background-position: -54px -36px;
+  }
+
+  // new_zealand 
+  &-tr {
+    // background-image: url('../images/spriteMobile.png');
+    // background-position: -40px -40px;
+
+    
+      background-image: url('../images/sprite.png');
+      background-position: -36px -36px;
+  }
+
+  // norway 
+  &-no {
+    // background-image: url('../images/spriteMobile.png');
+    // background-position: -44px -24px;
+
+    
+      background-image: url('../images/sprite.png');
+      background-position: -36px 36px;
+  }
+
+  // portugal brazil 
+  &-br {
+    // background-image: url('../images/spriteMobile.png');
+    // background-position: -22px -40px;
+
+    
+      background-image: url('../images/sprite.png');
+      background-position: 55px 18px;
+  }
+}

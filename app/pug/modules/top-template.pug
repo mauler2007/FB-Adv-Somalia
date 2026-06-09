@@ -1,0 +1,25 @@
+mixin payment(svgClassName,iconNameFromSprite)
+    div.payments__item
+      svg(class=`${svgClassName}`)
+        use(xlink:href=`./images/sprite.svg#${iconNameFromSprite}`)
+
+section.top <!-- add className .top--noForm  when form must hide-->
+
+      
+  .container.container--fluid
+    .top__inner
+      include title
+
+      .top__geoContent
+        //- include title
+        include form
+        //- include buttonEllipse
+        //- +customButton('btn-7 custom-btn', 'data-modal="popup-steps"')
+
+        //- .top__payments
+        //-   include payments-methods
+        //- include instruction
+        //- +instruction('desktop')
+      
+      .top__promo
+        include promo
