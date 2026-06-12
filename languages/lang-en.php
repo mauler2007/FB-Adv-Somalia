@@ -1,0 +1,28 @@
+<?php
+$local = array(
+  "landing_main_title_1" => 'Run Your Own',
+  "landing_main_title_2" => 'Business with B&U',
+  "cta_main_button" => 'BECOME AN AGENT',
+  "main_headline" => 'Start today and earn from EVERY deposit and withdrawal!',
+  "step_1" => 'Become an Agent',
+  "step_2" => 'Help players handle deposits and withdrawals',
+  "step_3" => 'Earn commission: 5% from deposits and 2% from withdrawals',
+  "adv_1_text" => '10K Agents Worldwide',
+  "adv_2_text" => 'Trusted Since 2019',
+  "adv_3_text" => 'Regular Benefits',
+  "adv_6_text" => 'High commissions',
+  "adv_4_text" => '24/7 Support',
+  "adv_5_text" => 'Easy Mobile App',
+  "cta_secondary_button" => 'join us today',
+  "form_title" => 'Become an agent',
+  "form_subtitle" => '10,000+ agents already work with us globally. Submit your application and hear from us within 24 hours.',
+  "field_name" => 'Name: *',
+  "field_email" => 'Email: *',
+  "field_country" => 'Country:',
+  "field_phone_number" => 'Phone Number: *',
+  "field_messenger" => 'Messenger:',
+  "button_submit" => 'submit',
+  "popup_title" => 'Don\'t Miss Your Spot',
+  "popup_description" => 'Join the 10K+ global agent network in less than a minute!',
+);
+?>

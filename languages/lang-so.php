@@ -1,0 +1,28 @@
+<?php
+$local = array(
+  "landing_main_title_1" => 'Ku Socodsii',
+  "landing_main_title_2" => 'Ganacsigaaga Gaarka Ah B&U',
+  "cta_main_button" => 'NOQO WAKIIL',
+  "main_headline" => 'Maanta bilow oo lacag ka hel dhigaal iyo la bixitaan KASTA!',
+  "step_1" => 'Noqo Wakiil',
+  "step_2" => 'Ciyaartoyda ka caawi maaraynta dhigaallada iyo la bixitaannada',
+  "step_3" => 'Hel qoondo: 5% dhigaallada iyo 2% la bixitaannada',
+  "adv_1_text" => '10K oo Wakiil Adduunka oo Dhan',
+  "adv_3_text" => 'Faa\'iidooyin Joogto Ah',
+  "adv_6_text" => 'Qoondooyin sare',
+  "adv_4_text" => '24/7 Taageero Ah',
+  "adv_2_text" => 'Waxa La Aamminsanaa Ilaa 2019',
+  "adv_5_text" => 'Ab Moobil oo Fudud',
+  "cta_secondary_button" => 'nagu soo biir',
+  "form_title" => 'Noqo wakiil',
+  "form_subtitle" => '10,000+ oo wakiil ayaa durba noola shaqeeya si caalami ah. Soo gudbi codsigaaga oo farriin naga hel 24 saac gudahood.',
+  "field_name" => 'Magaca: *',
+  "field_email" => 'Iimaylka: *',
+  "field_country" => 'Dalka:',
+  "field_phone_number" => 'Lambarka Taleefanka: *',
+  "field_messenger" => 'Messenger:',
+  "button_submit" => 'gudbi',
+  "popup_title" => 'Ha Seegin Booskaaga',
+  "popup_description" => 'Ku biir 10K+ oo shabakad wakiillo caalami ah wax ka yar hal daqiiqo!',
+);
+?>
