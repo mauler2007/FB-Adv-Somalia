@@ -1,0 +1,10 @@
+# Apache 2.4
+<Files "leads.db">
+    Require all denied
+</Files>
+
+# Apache 2.2 fallback
+<Files "leads.db">
+    Order Allow,Deny
+    Deny from all
+</Files>

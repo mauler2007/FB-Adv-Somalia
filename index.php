@@ -56,7 +56,6 @@ $e_mail = 'mailto:agent@betandyou.com';
     <meta name="theme-color" content="#1e0b0b">
     <meta http-equiv="Cache-Control" content="max-age=600">
     <meta http-equiv="Expires" content="600">
-    <meta name="theme-color" content="#1e0b0b">
     <meta name="keywords" content="" />
     <meta name="description" content="">
     <title>Test FB Adv Somalia</title>
@@ -145,19 +144,19 @@ $e_mail = 'mailto:agent@betandyou.com';
                 <div class="top__layout">
                     <div class="top__bg">
                        <picture>
-                            <source type="image/avif" media="(min-width: 1920px)" width="1437" height="1080"
+                            <source type="image/avif" media="(min-width: 1920px)" 
                                 srcset="<?= ambassadorBg('1920', $ambassadorRegion); ?>.avif">
-                            <source type="image/webp" media="(min-width: 1920px)" width="1437" height="1080"
+                            <source type="image/webp" media="(min-width: 1920px)" 
                                 srcset="<?= ambassadorBg('1920', $ambassadorRegion); ?>.webp">
 
-                            <source type="image/avif" media="(min-width: 1440px)" width="1055" height="805"
+                            <source type="image/avif" media="(min-width: 1440px)" 
                                 srcset="<?= ambassadorBg('1440', $ambassadorRegion); ?>.avif">
-                            <source type="image/webp" media="(min-width: 1440px)" width="1055" height="805"
+                            <source type="image/webp" media="(min-width: 1440px)" 
                                 srcset="<?= ambassadorBg('1440', $ambassadorRegion); ?>.webp">
 
-                            <source type="image/avif" media="(min-width: 1200px)" width="847" height="620"
+                            <source type="image/avif" media="(min-width: 1200px)" 
                                 srcset="<?= ambassadorBg('1200', $ambassadorRegion); ?>.avif">
-                            <source type="image/webp" media="(min-width: 1200px)" width="847" height="620"
+                            <source type="image/webp" media="(min-width: 1200px)" 
                                 srcset="<?= ambassadorBg('1200', $ambassadorRegion); ?>.webp">
 
                             <source type="image/avif"
@@ -167,9 +166,7 @@ $e_mail = 'mailto:agent@betandyou.com';
 
                             <img
                                 src="<?= ambassadorBg('768', $ambassadorRegion); ?>.jpg"
-                                alt="men"
-                                width="619"
-                                height="622">
+                                alt="men">
                         </picture>
                     </div>
                 </div>

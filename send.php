@@ -43,6 +43,16 @@ $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
 // ====== ВІДПРАВКА ======
 if (mail($to, $subject, $body, $headers)) {
+    require_once 'lead_storage.php';
+    $lead_id = $_POST['lead_id'] ?? null;
+    if ($lead_id) {
+        try {
+            partial_leads_mark_completed($lead_id);
+        } catch (Exception $e) {
+            // Log the error but do not break the existing successful form submit
+            error_log("SQLite error marking lead as completed: " . $e->getMessage());
+        }
+    }
     echo json_encode(["success" => true]);
 } else {
     echo json_encode(["success" => false]);
