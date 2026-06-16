@@ -33,7 +33,8 @@ try {
 
     // 5. Головна умова MVP: не зберігаємо якщо немає жодного контакту.
     // Виключення: status=completed (фінальний submit через send.php).
-    if (!$phone && !$email && $status !== 'completed') {
+    $leadId = trim($data['lead_id'] ?? '');
+    if (!$leadId && !$phone && !$email && $status !== 'completed') {
         echo json_encode(['success' => false, 'reason' => 'no_contact']);
         exit;
     }

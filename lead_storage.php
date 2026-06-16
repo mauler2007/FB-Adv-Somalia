@@ -144,23 +144,24 @@ function partial_leads_save(array $data): array
                 $completedAt = $existingLead['completed_at'] ?? null;
             }
 
+            // Оновлюємо поле тільки якщо нове значення непорожнє, інакше залишаємо старе:
             $sql = "
                 UPDATE leads
                 SET
-                    name = :name,
-                    email = :email,
-                    phone = :phone,
-                    country = :country,
-                    messanger = :messanger,
-                    status = :status,
-                    source = :source,
-                    locale = :locale,
-                    page_url = :page_url,
-                    referrer = :referrer,
-                    utm_source = :utm_source,
-                    utm_campaign = :utm_campaign,
-                    utm_medium = :utm_medium,
-                    updated_at = :updated_at,
+                    name      = CASE WHEN :name != '' THEN :name ELSE name END,
+                    email     = CASE WHEN :email != '' THEN :email ELSE email END,
+                    phone     = CASE WHEN :phone != '' THEN :phone ELSE phone END,
+                    country   = CASE WHEN :country != '' THEN :country ELSE country END,
+                    messanger = CASE WHEN :messanger != '' THEN :messanger ELSE messanger END,
+                    source       = CASE WHEN :source != '' THEN :source ELSE source END,
+                    locale       = CASE WHEN :locale != '' THEN :locale ELSE locale END,
+                    page_url     = CASE WHEN :page_url != '' THEN :page_url ELSE page_url END,
+                    referrer     = CASE WHEN :referrer != '' THEN :referrer ELSE referrer END,
+                    utm_source   = CASE WHEN :utm_source != '' THEN :utm_source ELSE utm_source END,
+                    utm_campaign = CASE WHEN :utm_campaign != '' THEN :utm_campaign ELSE utm_campaign END,
+                    utm_medium   = CASE WHEN :utm_medium != '' THEN :utm_medium ELSE utm_medium END,
+                    status       = :status,
+                    updated_at   = :updated_at,
                     completed_at = :completed_at,
                     sheets_synced = 0,
                     sheets_synced_at = NULL
