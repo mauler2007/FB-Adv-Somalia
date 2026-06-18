@@ -1,0 +1,26 @@
+<?php
+$local = array(
+  "landing_main_title_1" => 'Biznesinizə',
+  "landing_main_title_2" => 'B&U ilə başlayın',
+  "cta_main_button" => 'AGENT OLUN',
+  "main_headline" => 'Bu gün başlayın və HƏR depozit və pul çıxarışı ilə qazanın!',
+  "step_1" => 'Agent olun',
+  "step_2" => 'Oyunçulara depozitlər və pul çıxarmalarda kömək edin',
+  "step_3" => 'Komissiya qazanın: depozitlər üzrə 5% və pul çıxarmalarda 2%',
+    "adv_1_text" => 'Dünya üzrə 10K',
+    "adv_2_text" => '2019-cu ildən bəri etibarlıdır',
+    "adv_3_text" => 'Daimi üstünlüklər',
+    "adv_6_text" => 'Yüksək ödənişlər',
+    "adv_4_text" => '24/7 dəstək',
+    "adv_5_text" => 'Rahat mobil tətbiq',
+  "cta_secondary_button" => 'BU GÜN BAŞLAYIN',
+  "form_title" => 'Agent olun',
+  "form_subtitle" => '1Artıq dünya üzrə 10.000-dən çox agentimiz var. Sorğu göndərin və biz 24 saat ərzində sizinlə əlaqə saxlayacağıq.',
+  "field_name" => 'Ad: *',
+  "field_email" => 'E-poçt: *',
+  "field_country" => 'Ölkə:',
+  "field_phone_number" => 'Telefon nömrəsi: *',
+  "field_messenger" => 'Messenger:',
+  "button_submit" => 'göndər',
+);
+?>

@@ -3,7 +3,7 @@
 $date = date("Ymdhis"); // получаем дату в формате ( год месяц день час минута секунда )
 $updateFile = "?v=$date"; // содаем запись из конкатенации: (приставка версии + дата)
 // Массив доступных для выбора языков
-$langArray = array("en", "ru", "uz", "so");
+$langArray = array("en", "ru", "uz", "so","az");
 
 include '../__LOCALISATIONS__/processingRegion.php';
 include '../__LOCALISATIONS__/processingLang.php';
@@ -29,7 +29,7 @@ if (in_array($region, $specialBonusRegions, true)) {
 
 // Ambassaddor  depends of GEO  start
 $region = strtolower($region ?? 'en');
-$availableAmbassadorRegions = [ 'so', 'en', 'uz'];
+$availableAmbassadorRegions = [ 'so', 'en', 'uz','az'];
 $ambassadorRegion = in_array($region, $availableAmbassadorRegions, true)
     ? $region
     : 'en';
@@ -349,7 +349,7 @@ $e_mail = 'mailto:agent@betandyou.com';
                             <!-- form__input--invalid клас для подчеркивания невалидного поля -->
                             <label class="form__label" for="phone">
                                 <input class="form__input " type="text" id="phone" name="phone" value=""
-                                    placeholder="<?= $local['field_phone_number']; ?>" required>
+                                    placeholder="" required>
                                 <div class="validate-block"><span>*Required field</span></div>
                             </label>
                             <label class="form__label" for="messanger">
@@ -357,7 +357,8 @@ $e_mail = 'mailto:agent@betandyou.com';
                                     placeholder="<?= $local['field_messenger']; ?>">
                                 <div class="validate-block"><span>*Required field</span></div>
                             </label>
-                            <input type="hidden" name="lead_id" id="registrationLeadId">
+                            <input type="hidden" id="registrationLeadId" name="lead_id">
+                            <input type="hidden" id="currentCountry" name="currentCountry" value="<?= $region ?>">
                             <div class="form__actions">
                                 <button class="button button--submit sub-form" type="submit"><?= $local['button_submit']; ?></button>
                             </div>
@@ -444,6 +445,7 @@ $e_mail = 'mailto:agent@betandyou.com';
     </footer>
    
     <script src="js/gsap.min.js"></script>
+    <script src="js/intlTelInput.js" defer></script>
     <script src="js/main.min.js<?= $updateFile ?>" defer></script>
 </body>
 
