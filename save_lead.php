@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 try {
     $data = $_POST;
+    $data['visitor_id'] = trim($_POST['visitor_id'] ?? '');
 
     // Збагачуємо дані серверними значеннями якщо фронт їх не передав.
     // Це дозволяє відстежувати звідки прийшов лід навіть без JS-трекінгу.
@@ -31,6 +32,21 @@ try {
     $email = trim($data['email'] ?? '');
     $status = $data['status'] ?? 'partial';
 
+    // ========================= TELEGRAM PARTIAL VALIDATION START =========================
+    // Partial lead: Telegram may be empty.
+    // If the user has already typed it, reject invalid format / obvious junk.
+    $telegramValidation = partial_leads_validate_telegram_username($data['messanger'] ?? '', false);
+
+    if (!$telegramValidation['valid']) {
+        http_response_code(422);
+        echo json_encode([
+            'success' => false,
+            'reason' => $telegramValidation['reason'],
+        ]);
+        exit;
+    }
+    // ========================== TELEGRAM PARTIAL VALIDATION END ==========================
+
     // 5. Головна умова MVP: не зберігаємо якщо немає жодного контакту.
     // Виключення: status=completed (фінальний submit через send.php).
     $leadId = trim($data['lead_id'] ?? '');
@@ -45,8 +61,15 @@ try {
     if ($result['success']) {
         echo json_encode(['success' => true, 'lead_id' => $result['lead_id'], 'status' => $result['status']]);
     } else {
-        http_response_code(500);
-        echo json_encode(['success' => false, 'reason' => $result['reason'] ?? 'server_error']);
+        $reason = $result['reason'] ?? 'server_error';
+        $validationReasons = [
+            'telegram_required',
+            'telegram_invalid_format',
+            'telegram_obvious_fake',
+        ];
+
+        http_response_code(in_array($reason, $validationReasons, true) ? 422 : 500);
+        echo json_encode(['success' => false, 'reason' => $reason]);
     }
 } catch (Throwable $e) {
     // 10. Ловимо будь-яку помилку щоб фронт завжди отримав валідний JSON

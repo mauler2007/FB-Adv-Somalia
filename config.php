@@ -13,4 +13,3 @@ define('GOOGLE_SHEETS_WEBHOOK_URL', 'https://script.google.com/macros/s/AKfycbyJ
 define('TG_ENABLED', false);
 define('TG_BOT_TOKEN', '');
 define('TG_CHAT_ID', '');
-https://script.google.com/macros/s/AKfycbwHRGDvbaxKznJ8cxLRomS4i6TAqSGHyO4ZsBOpKwi3g1ZegvXwtlzHnFyw7lDo_XYzhw/exec

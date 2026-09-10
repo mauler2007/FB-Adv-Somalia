@@ -20,7 +20,7 @@ $local = array(
   "field_email" => 'E-poçt: *',
   "field_country" => 'Ölkə:',
   "field_phone_number" => 'Telefon nömrəsi: *',
-  "field_messenger" => 'Messenger:',
+  "field_messenger" => 'Telegram istifadəçi adı (@username): *',
   "button_submit" => 'göndər',
 );
 ?>
