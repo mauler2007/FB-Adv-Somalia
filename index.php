@@ -348,11 +348,19 @@ $e_mail = 'mailto:agent@betandyou.com';
                             <label class="form__label" for="messanger">
                                 <!-- <input class="form__input" type="text" id="messanger" name="messanger" value=""
                                     placeholder="<?= $local['field_messenger']; ?>"> -->
+                                <!-- <input class="form__input" type="text" id="messanger" name="messanger" value=""
+                                    placeholder="<?= $local['field_messenger']; ?>" required minlength="6"
+                                    maxlength="128" pattern="@[A-Za-z][A-Za-z0-9_]{3,30}[A-Za-z0-9]" autocomplete="off"
+                                    autocapitalize="off" spellcheck="false"> -->
+
                                 <input class="form__input" type="text" id="messanger" name="messanger" value=""
-                                    placeholder="<?= $local['field_messenger']; ?>" required minlength="6" maxlength="33"
-                                    pattern="@[A-Za-z][A-Za-z0-9_]{3,30}[A-Za-z0-9]" autocomplete="off"
-                                    autocapitalize="off" spellcheck="false">
-                                <div class="validate-block"><span>*Enter your Telegram username in format @username</span></div>
+                                    placeholder="<?= $local['field_messenger']; ?>" required maxlength="128"
+                                    autocomplete="off" autocapitalize="off" spellcheck="false">
+                                <div class="validate-block validate-block--messanger" id="telegramValidationMessage"
+                                    data-invalid="<?= htmlspecialchars($local['telegram_invalid'], ENT_QUOTES, 'UTF-8'); ?>"
+                                    data-not-found="<?= htmlspecialchars($local['telegram_not_found'], ENT_QUOTES, 'UTF-8'); ?>">
+                                    <span><?= htmlspecialchars($local['telegram_invalid'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                </div>
                             </label>
                             <input type="hidden" id="registrationLeadId" name="lead_id">
                             <input type="hidden" id="currentCountry" name="currentCountry" value="<?= $region ?>">
@@ -445,6 +453,7 @@ $e_mail = 'mailto:agent@betandyou.com';
     <script src="js/gsap.min.js"></script>
     <script src="js/intlTelInput.js" defer></script>
     <script src="js/main.min.js<?= $updateFile ?>" defer></script>
+    <script src="js/lead-form.js<?= $updateFile ?>"></script>
 </body>
 
 </html>

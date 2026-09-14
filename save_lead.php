@@ -1,6 +1,8 @@
 <?php
 
 header('Content-Type: application/json');
+
+require_once __DIR__ . '/telegram_input.php';
 require_once __DIR__ . '/lead_storage.php';
 
 // 1.Приймаємо тільки POST — решта методів повертає 405
@@ -12,6 +14,19 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 try {
     $data = $_POST;
+
+    $normalizedMessanger = normalizeTelegramInput($data['messanger'] ?? '');
+
+    if ($normalizedMessanger === null) {
+        http_response_code(422);
+        echo json_encode([
+            'success' => false,
+            'reason' => 'telegram_invalid_format',
+        ]);
+        exit;
+    }
+
+    $data['messanger'] = $normalizedMessanger;
     $data['visitor_id'] = trim($_POST['visitor_id'] ?? '');
 
     // Збагачуємо дані серверними значеннями якщо фронт їх не передав.

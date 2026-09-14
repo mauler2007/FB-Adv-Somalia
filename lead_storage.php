@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/telegram_input.php';
 
 function partial_leads_get_pdo(): ?PDO
 {
@@ -256,9 +257,24 @@ function partial_leads_find_latest_by_visitor_id(PDO $pdo, string $visitorId): ?
 
 function partial_leads_save(array $data): array
 {
-    // Storage-layer safety: even a direct POST that bypasses save_lead.php
-    // cannot persist a filled invalid/fake Telegram username.
-    $telegramValidation = partial_leads_validate_telegram_username($data['messanger'] ?? '', false);
+    
+    // Normalize before validation/storage.
+    $normalizedMessanger = normalizeTelegramInput($data['messanger'] ?? '');
+
+    if ($normalizedMessanger === null) {
+        return [
+            'success' => false,
+            'reason' => 'telegram_invalid_format',
+        ];
+    }
+
+    $data['messanger'] = $normalizedMessanger;
+
+    // Storage-layer safety.
+    $telegramValidation = partial_leads_validate_telegram_username(
+        $data['messanger'],
+        false
+    );
 
     if (!$telegramValidation['valid']) {
         return [

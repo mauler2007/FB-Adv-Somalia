@@ -9,7 +9,31 @@ define('GOOGLE_SHEETS_ENABLED', true);
 define('GOOGLE_SHEETS_WEBHOOK_URL', 'https://script.google.com/macros/s/AKfycbyJ1hCIRrS-8RJdeeieHcgAJjn2Ujsh0TxIJj4Lg6IlbhAjm3IAyJXNlJjfaYU3N_Bp/exec');
 // define('GOOGLE_SHEETS_WEBHOOK_URL', 'https://script.google.com/a/macros/betandyou.com/s/AKfycbzTQfRWYAp3VSRFLTgL2_zWDH4YAtvi_bAnUDQVkTcDMu7lcVVIFL69zrU7EgXZhxW4/exec'); //  production? needs change when modeved
 
-// Telegram — після Google Sheets
+
+// Telegram username checker (Fragment via VPS)
+define('TELEGRAM_CHECKER_ENABLED', true);
+
+define(
+    'TELEGRAM_CHECKER_URL',
+    'http://145.223.102.39:8000/check'
+);
+
+$localConfig = __DIR__ . '/config.local.php';
+
+if (is_file($localConfig)) {
+    require_once $localConfig;
+}
+
+if (!defined('TELEGRAM_CHECKER_TOKEN')) {
+    define('TELEGRAM_CHECKER_TOKEN', '');
+}
+
+define('TELEGRAM_CHECKER_CONNECT_TIMEOUT', 2);
+define('TELEGRAM_CHECKER_TIMEOUT', 5);
+define('TELEGRAM_CHECKER_DEBUG_LOG', true);
+
+
+// Telegram bot — окремим кроком
 define('TG_ENABLED', false);
 define('TG_BOT_TOKEN', '');
 define('TG_CHAT_ID', '');

@@ -37,13 +37,13 @@ $failed = 0;
 
 foreach ($leads as $lead) {
     $payload = json_encode([
-        'lead_id'    => $lead['id'],
-        'status'     => $lead['status'],
-        'name'       => $lead['name'],
-        'phone'      => $lead['phone'],
-        'email'      => $lead['email'],
-        'country'    => $lead['country'],
-        'messanger'  => $lead['messanger'],
+        'lead_id' => $lead['id'],
+        'status' => $lead['status'],
+        'name' => $lead['name'],
+        'phone' => $lead['phone'],
+        'email' => $lead['email'],
+        'country' => $lead['country'],
+        'messanger' => $lead['messanger'],
         'created_at' => $lead['created_at'],
         'updated_at' => $lead['updated_at'],
         'completed_at' => $lead['completed_at'],
@@ -72,10 +72,30 @@ foreach ($leads as $lead) {
 
     if ($httpCode === 200 && isset($decoded['success']) && $decoded['success'] === true) {
         $updateStmt = $pdo->prepare(
-            'UPDATE leads SET sheets_synced = 1, sheets_synced_at = CURRENT_TIMESTAMP WHERE id = ?'
+            'UPDATE leads
+     SET sheets_synced = 1,
+         sheets_synced_at = CURRENT_TIMESTAMP
+     WHERE id = ?
+       AND updated_at = ?
+       AND status = ?'
         );
-        $updateStmt->execute([$lead['id']]);
-        $success++;
+
+        $updateStmt->execute([
+            $lead['id'],
+            $lead['updated_at'],
+            $lead['status'],
+        ]);
+
+        if ($updateStmt->rowCount() === 1) {
+            $success++;
+        } else {
+            // Lead змінився, поки ми синхронізували стару версію.
+            // Не позначаємо нову версію як synced.
+            // Наступний cron відправить її повторно.
+            error_log(
+                "sync_sheets: lead {$lead['id']} changed during sync, retry required"
+            );
+        }
     } else {
         error_log("sync_sheets: failed lead {$lead['id']}: HTTP $httpCode body: $response");
         $failed++;
